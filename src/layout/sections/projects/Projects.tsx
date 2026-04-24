@@ -69,12 +69,12 @@ export function Projects() {
           description="Things I’ve built so far"
           margin="50px"
         />
-        <Tabs/>
-        <FlexWrapper gap="34px" wrap="wrap">
+        <Tabs />
+        <ProjectsWrapper>
           {projects.map((project) => (
             <Project key={project.id} {...project} />
           ))}
-        </FlexWrapper>
+        </ProjectsWrapper>
       </Container>
     </StyledProjects>
   );
@@ -82,4 +82,8 @@ export function Projects() {
 const StyledProjects = styled.section`
   padding: 100px 0;
 `;
-
+const ProjectsWrapper = styled.div`
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(325px, 1fr));
+  gap: 34px;
+`;

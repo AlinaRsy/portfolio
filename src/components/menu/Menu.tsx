@@ -1,12 +1,14 @@
 import styled from "styled-components"
 import { theme } from "../../styles/Theme.styled"
 type MenuProps = {
+    // device?: string,
     color?: string,
     size?: string,
     weight?: string,
     menuItems: string[],
 }
-type MenuItemStyleProps = {
+type MenuStyleProps = {
+    // device?: string,
     color?: string;
     size?: string;
     weight?: string;
@@ -26,11 +28,15 @@ export function Menu(props: MenuProps) {
 }
 const StyledMenu = styled.nav`
 `
-const StyledList = styled.ul`
+const StyledList = styled.ul<MenuStyleProps>`
     display: flex;
     gap: 52px;
+    @media ${theme.media.tabletMax} {
+        gap: 44px;
+        flex-direction: column;
+    }
 `
-const StyledMenuItem = styled.li<MenuItemStyleProps>`
+const StyledMenuItem = styled.li<MenuStyleProps>`
     font-family: ${theme.fonts.secondery};
     color: ${props => props.color || 'black'};
     font-size: ${props => props.size || '18px'};

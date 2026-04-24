@@ -4,7 +4,7 @@ type LogoProps = {
 }
 export function Logo(props:LogoProps) {
     return (
-        <a href="#">
+        <a aria-label="Logo-link to main page" href="#">
             <Icon width="97" height="60" iconId={props.iconId}/>
         </a>
     )

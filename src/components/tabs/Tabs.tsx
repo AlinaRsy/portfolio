@@ -5,8 +5,8 @@ import { useState } from "react";
 type TabProps = {
   active?: boolean;
 };
+const tabs = ["All", "SPA", "React", "Landing"];
 export function Tabs() {
-  const tabs = ["All", "SPA", "React", "Landing"];
   const [activeTab, setActiveTab] = useState("All");
   return (
     <StyledTabs>
@@ -25,13 +25,7 @@ export function Tabs() {
   );
 }
 const StyledTabs = styled.div`
-  margin: 20px 0 70px 0;
-  button {
-    width: 140px;
-    padding: 10px 0;
-    font-size: 22px;
-    position: relative;
-  }
+  margin: 20px 0 50px 0;
 `;
 const Tab = styled.button<TabProps>`
   width: 140px;

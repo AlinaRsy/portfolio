@@ -23,4 +23,8 @@ export const GlobalStyles = createGlobalStyle`
         cursor: pointer;
         background-color: unset;
     }
+    h1,h2,h3,h4,h5,h6{
+        line-height: 1;
+        font-size: 1rem;
+    }
 `

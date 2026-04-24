@@ -13,3 +13,4 @@ export function Icon(props:IconProps){
         </svg>
     )
 }
+// viewBox={props.viewBox||`0 0 ${props.width} ${props.height}`}

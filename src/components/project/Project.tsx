@@ -18,11 +18,11 @@ export function Project(props: ProjectProps) {
                 <StyledDescription>{props.description}</StyledDescription>
                 <StyledProjectStack><TitleStack>Tech stack :</TitleStack> <StackItem>{props.stack.map((item,index) => index < props.stack.length-1 ? `${item} , `  : item)}</StackItem></StyledProjectStack>
                 <FlexWrapper align="center" gap="48px">
-                    <StyledLink href="#">
+                    <StyledLink aria-label="Live Preview" href="#">
                         <Icon iconId="linkSvg" width="17" height="17" color="none"/>
                         Live Preview
                     </StyledLink>
-                    <StyledLink href="#">
+                    <StyledLink aria-label="View Code" href="#">
                         <Icon iconId="githubSvg" width="20" height="20" viewBox="0 0 30 30" color="currentColor" />
                         View Code
                     </StyledLink>
@@ -32,8 +32,7 @@ export function Project(props: ProjectProps) {
     )
 }
 const StyledProject = styled.article`
-    flex: 1 0 30%;
-    box-shadow: 2px 2px 100px #00000033;
+    box-shadow: ${theme.styles.shadow};
     border-radius: 20px;
 `
 const StyledImg = styled.img`
@@ -50,18 +49,18 @@ const StyledProjectBody = styled.div`
 const StyledProjectTitle = styled.h3`
     font-size: 28px;
     font-weight: 500;
-    padding-bottom: 12px;
+    margin-bottom: 12px;
 `
 const StyledDescription = styled.p`
     font-size: 18px;
     line-height: 26px;
     font-weight: 300;
     color: ${theme.colors.darkGrey};
-    padding-bottom: 12px;
+    margin-bottom: 12px;
 `
 const StyledProjectStack = styled.div`
     color: ${theme.colors.primery};
-    padding-bottom: 24px;
+    margin-bottom: 24px;
 `
 const TitleStack = styled.h4`
     font-weight: 400;
