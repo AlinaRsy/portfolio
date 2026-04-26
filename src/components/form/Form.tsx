@@ -3,6 +3,7 @@ import { theme } from "../../styles/Theme.styled";
 import { FlexWrapper } from "../FlexWrapper";
 import { Button } from "../button";
 import { Icon } from "../icon/Icon";
+import { font } from "../../styles/Common";
 
 export function Form() {
   return (
@@ -50,11 +51,13 @@ const StyledForm = styled.form`
     margin-top: 20px;
     width: 220px;
   }
+  @media ${theme.media.tablet}{
+    padding: 30px;
+    margin-bottom: 50px;
+  }
 `;
 const FormTitle = styled.h5`
-  font-size: 40px;
-  font-weight: 600;
-  color: ${theme.colors.primery};
+  ${font({color:theme.colors.primery, weight:600, Fmax:40, Fmin:32})}
   text-transform: uppercase;
 `;
 const FormDescription = styled.p`
@@ -63,12 +66,21 @@ const FormDescription = styled.p`
   line-height: 26px;
   max-width: 50%;
   margin-bottom: 20px;
+  @media ${theme.media.tablet}{
+    max-width: 80%;
+  }
+  @media ${theme.media.mobile}{
+    max-width: 100%;
+  }
 `;
 const FieldsWrapper = styled.fieldset`
   display: grid;
   width: 100%;
   grid-template-columns: 1fr 1fr;
   gap: 20px;
+  @media ${theme.media.mobile}{
+    grid-template-columns: 1fr;
+  }
 `;
 const FieldWrapper = styled.label`
   position: relative;
@@ -90,6 +102,9 @@ const FieldWrapper = styled.label`
     );
     pointer-events: none;
     border-radius: 10px;
+  }
+  @media ${theme.media.mobile}{
+    grid-column: 1/2;
   }
 `;
 const Field = styled.input.attrs(() => ({ type: "text" }))`
@@ -136,4 +151,8 @@ const TextArea = styled.textarea`
   resize: none;
   grid-column: 2/3;
   grid-row: 1/4;
+    @media ${theme.media.mobile}{
+    grid-column: 1/2;
+    grid-row: auto;
+  }
 `;

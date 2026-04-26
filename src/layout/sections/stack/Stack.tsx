@@ -3,6 +3,7 @@ import { SectionHead } from "../../../components/sectionHead/SectionHead";
 import { FlexWrapper } from "../../../components/FlexWrapper";
 import { Icon } from "../../../components/icon/Icon";
 import { Container } from "../../../components/Container";
+import { theme } from "../../../styles/Theme.styled";
 
 const stack = [
   "html",
@@ -43,13 +44,15 @@ export function Stack() {
   );
 }
 const StyledStack = styled.section`
-  padding: 100px 0;
 `;
 const SkillsWrapper = styled.ul`
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
   gap: 100px;
-  overflow: hidden;
+  @media ${theme.media.mobile}{
+    gap: 50px;
+    grid-template-columns: repeat(auto-fit, minmax(70px, 1fr));
+  }
 `;
 const Skill = styled.li`
   display: flex;

@@ -14,12 +14,6 @@ function App() {
      <Projects/>
      <Mail/>
      <Footer/>
-     <p>
-        <span>
-          Hello
-        </span>
-        <a href="">Link</a>
-     </p>
     </>
   )
 }

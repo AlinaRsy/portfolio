@@ -3,6 +3,7 @@ import { theme } from "../../../styles/Theme.styled";
 import { FlexWrapper } from "../../../components/FlexWrapper";
 import { Container } from "../../../components/Container";
 import { Form } from "../../../components/form/Form";
+import { font } from "../../../styles/Common";
 
 export function Mail() {
   return (
@@ -23,19 +24,23 @@ export function Mail() {
     </StyledMail>
   );
 }
-const StyledMail = styled.section`
-  padding: 100px 0;
-`;
-const MailMessage = styled.div`
-`;
+const StyledMail = styled.section``;
+const MailMessage = styled.div``;
 const MailText = styled.p`
-  font-size: 58px;
-  line-height: 70px;
-  font-weight: 700;
+  ${font({
+    lineHeight: "70px",
+    color: "#1e0e62",
+    family: theme.fonts.secondery,
+    Fmin: 30,
+    Fmax: 58,
+    weight: 700,
+  })}
   letter-spacing: -1px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   text-align: center;
-  font-family: ${theme.fonts.secondery};
-  color: #1e0e62;
   max-width: 70%;
   a {
     background: linear-gradient(
@@ -45,5 +50,13 @@ const MailText = styled.p`
     );
     background-clip: text;
     color: transparent;
+  }
+  @media ${theme.media.tablet} {
+    max-width: 80%;
+    line-height: 50px;
+  }
+  @media ${theme.media.mobile} {
+    max-width: 90%;
+    line-height: 40px;
   }
 `;

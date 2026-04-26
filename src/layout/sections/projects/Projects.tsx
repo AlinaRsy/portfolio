@@ -80,7 +80,6 @@ export function Projects() {
   );
 }
 const StyledProjects = styled.section`
-  padding: 100px 0;
 `;
 const ProjectsWrapper = styled.div`
   display: grid;

@@ -2,6 +2,7 @@ import styled from "styled-components"
 import { Icon } from "../icon/Icon"
 import { theme } from "../../styles/Theme.styled"
 import { FlexWrapper } from "../FlexWrapper"
+import { font } from "../../styles/Common"
 type ProjectProps = {
     id: number,
     title: string,
@@ -40,6 +41,12 @@ const StyledImg = styled.img`
     aspect-ratio: 75/52;
     object-fit: cover;
     border-radius: 20px 20px 0 0;
+    @media ${theme.media.tablet} {
+        aspect-ratio: 75/42;
+    }
+    @media ${theme.media.mobile} {
+        aspect-ratio: 75/52;
+    }
 `
 const StyledProjectBody = styled.div`
     display: flex;
@@ -47,8 +54,7 @@ const StyledProjectBody = styled.div`
     padding: 28px 30px;
 `
 const StyledProjectTitle = styled.h3`
-    font-size: 28px;
-    font-weight: 500;
+${font({Fmax:28,Fmin:22,weight:500,color:'black'})}
     margin-bottom: 12px;
 `
 const StyledDescription = styled.p`

@@ -4,6 +4,7 @@ import { HeaderNavigation } from "./HeaderNavigation"
 import { FlexWrapper } from "../../components/FlexWrapper"
 import { Container } from "../../components/Container"
 import { MobileMenu } from "./MobileMenu"
+import { theme } from "../../styles/Theme.styled"
 const menuItems = ["Home", "About", "Tech Stack", "Projects", "Contact"];
 export function Header() {
     return (
@@ -26,4 +27,7 @@ const StyledHeader = styled.header`
     left: 0;
     right: 0;
     z-index: 9999;
+    @media ${theme.media.mobile}{
+        padding: 25px 0;
+    }
 `

@@ -14,8 +14,8 @@ export const theme = {
         secondery: '"DM Sans", sans-serif'
     },
     media: {
-        tabletMax: 'screen and (max-width: 912px)',
+        tabletMax: 'screen and (max-width: 992px)',
         tablet: 'screen and (max-width: 768px)',
-        mobile: 'screen and (max-with: 576px)',
+        mobile: 'screen and (max-width: 576px)',
     }
 }

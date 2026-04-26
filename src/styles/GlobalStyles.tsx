@@ -12,6 +12,13 @@ export const GlobalStyles = createGlobalStyle`
     margin: 0;
     background-color: white;
     font-family: ${theme.fonts.primery};
+    min-width: 375px;
+   }
+   section{
+    padding: 100px 0;
+    @media ${theme.media.mobile}{
+        padding: 60px 0;
+    }
    }
     a{
         text-decoration: none;

@@ -1,6 +1,7 @@
 import styled from "styled-components"
 import { FlexWrapper } from "../FlexWrapper"
 import { theme } from "../../styles/Theme.styled"
+import { font } from "../../styles/Common"
 type SectionHeadProps = {
     title?: string,
     description?: string,
@@ -18,13 +19,13 @@ export function SectionHead(props: SectionHeadProps) {
 }
 const StyledSectionHead = styled.div<SectionHeadProps>`
     margin-bottom: ${props=>props.margin || '110px'};
+    @media ${theme.media.mobile}{
+        margin-bottom: ${props=>props.margin ? parseInt(props.margin)/1.5+'px' : '80px'}
+    }
 `
 const StyledSectionTitle = styled.h2`
-    font-weight: 700;
-    font-size: 48px;
-    color: ${theme.colors.primery};
+    ${font({color:theme.colors.primery, weight:700, Fmax:48, Fmin:28})}
 `
 const StyledSectionDescription = styled.p`
-    font-size: 32px;
-    color: ${theme.colors.darkGrey};
+    ${font({color:theme.colors.darkGrey, Fmin:20, Fmax:32})}
 `
